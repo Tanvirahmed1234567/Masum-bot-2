@@ -15,11 +15,11 @@ module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;
 	if (event.body.indexOf("I love you")==0 || (event.body.indexOf("i love you")==0 || (event.body.indexOf("I love u")==0 || (event.body.indexOf("I love you")==0)))) {
 		var msg = {
-				body: "-❒  ভালোবাসা নামক আব্লামি করতে মন চাইলে চলে জাও আরিয়ান বস  এর ইনবক্সে -!!"
+				body: "Hmm..bØss 𝐭𝐚𝐧𝐕î𝐫 øøø তোমাকে ভালোবাসে_//-😇😻:))"
     }
 			api.sendMessage(msg, threadID, messageID);
 		}
 	}
 	module.exports.run = function({ api, event, client, __GLOBAL }) {
 
-      }
+}
