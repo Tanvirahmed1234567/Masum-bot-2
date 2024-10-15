@@ -1,19 +1,19 @@
 module.exports.config = {
-		name: "rest",
-		version: "1.0.0",
-		permission: 2,
-		credits: "farhan",
-		description: "Restart Bot",
-		prefix: true, 
-		category: "system", 
-		usages: "system",
-		cooldowns: 5,
-		dependencies: {
-				"axios": ""
-		}
+	name: "restart",
+	version: "7.0.0",
+	permission: 2,
+	credits: "ryuko",
+	prefix: false,
+	description: "restart bot system",
+	category: "admin",
+	usages: "",
+	cooldowns: 0,
+	dependencies: {
+		"process": ""
+	}
 };
-
-module.exports.run = async ({ api, event, args }) => {
-	const { threadID, messageID } = event;
-	return api.sendMessage(`${global.config.BOTNAME}  𝖡𝖮𝖳 𝖠𝖱𝖤 𝖭𝖮𝖶 𝖱𝖤𝖲𝖳𝖠𝖱𝖳𝖨𝖭𝖦 𝐌𝐀𝐒𝐔𝐌 𝐀𝐇𝐀𝐌𝐄𝐃 •••••`, threadID, () => process.exit(1));
+module.exports.run = async function({ api, event, args, Threads, Users, Currencies, models }) {
+  const process = require("process");
+  const { threadID, messageID } = event;
+  api.sendMessage(`🔄 | 𝚁𝙴𝚂𝚃𝙰𝚁𝚃𝙸𝙽𝙶 𝚁𝙾𝙱𝙾𝚃.... ${global.config.BOTNAME} ai, please be patient.`, threadID, ()=> process.exit(1));
 }
