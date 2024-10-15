@@ -1,31 +1,41 @@
+
 const fs = require("fs");
 module.exports = {
   config:{
-	name: "npx15",
+  name: "npx15",
         version: "1.0.1",
         prefix: false,
-	permssion: 0,
-	credits: "Fahim", 
-	description: "Fun",
-	category: "no prefix",
-	usages: "",
+  permssion: 0,
+  credits: "nayan", 
+  description: "Fun",
+  category: "no prefix",
+  usages: "😒",
         cooldowns: 5, 
 },
 
-handleEvent: function({ api, event, client, __GLOBAL }) {
-	var { threadID, messageID } = event;
+handleEvent: async function({ api, event, client, __GLOBAL }) {
+  var { threadID, messageID } = event;
   const content = event.body ? event.body : '';
   const body = content.toLowerCase();
-	if (body.indexOf(" ")==0 || body.indexOf("🕵️‍♀️")==0 || body.indexOf("🐸")==0 || body.indexOf(" ")==0) {
-		var msg = {
-				body: "ব্যাৃঁংকৃঁ কা্ঁকে্ঁ দেৃঁখাৃঁওৃঁ ব্যা্ঁংক্ঁ দেৃঁখেৃঁ তো্ঁ আৃঁমিৃঁ ভ্ঁয়্ঁ পাৃঁইৃঁ না্ঁ 🐸🥴",
-				attachment: fs.createReadStream(__dirname + `/ArYan/beng.mp3`)
-			}
-			api.sendMessage( msg, threadID, messageID);
-    api.setMessageReaction("🧐", event.messageID, (err) => {}, true)
-		}
-	},
-	start: function({ nayan }) {
+  const axios = require('axios')
+  const NAYAN = ['https://i.imgur.com/RJ9MrGT.mp4','https://i.imgur.com/JSB7ffz.mp4','https://i.imgur.com/6gg4p0T.mp4']
+    var rndm = NAYAN[Math.floor(Math.random() * NAYAN.length)];
+const media = (
+    await axios.get(
+      `${rndm}`,
+      { responseType: 'stream' }
+    )
+  ).data;
 
-  }
+  if (body.indexOf("🕌")==0 || body.indexOf("🕋")==0 || body.indexOf("surah")==0 || body.indexOf("surah")==0 || body.indexOf(" ")==0 || body.indexOf(" ")==0 || body.indexOf(" ")==0 || body.indexOf(" ")==0 || body.indexOf(" ")==0 || body.indexOf(" ")==0) {
+    var msg = {
+        body: "-♦𝗕Ø𝗦𝗦 𝗧𝗔𝗡𝗩𝗜𝗥♦-\n 😊___-•|•-Allah 🖤🥀___😊 ",
+        attachment: media
       }
+      api.sendMessage( msg, threadID, messageID);
+    api.setMessageReaction("🖤", event.messageID, (err) => {}, true)
+    }
+  },
+  start: function({ nayan }) {
+  }
+}
