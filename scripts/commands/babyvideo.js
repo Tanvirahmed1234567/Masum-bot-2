@@ -20,7 +20,7 @@ module.exports.run = async ({ api, event, args, client, Users, Threads, __GLOBAL
   const request = global.nodemodule["request"];
   const fs = global.nodemodule["fs-extra"];
 
-  var hi = ["☞ masum baby video ❉"];
+  var hi = ["-🔰 -♦𝗕Ø𝗦𝗦 𝗧𝗔𝗡𝗩𝗜𝗥♦- 🔰-"];
   var know = hi[Math.floor(Math.random() * hi.length)];
 
   var link = [
