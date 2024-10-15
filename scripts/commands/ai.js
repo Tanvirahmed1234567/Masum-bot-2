@@ -28,15 +28,15 @@ gpt({
     messages: [
         {
             role: "assistant",
-            content: "Hello! How are you today?"
+            content: "-𝗛𝗲𝗹𝗹𝗼! 𝗛𝗼𝘄 𝗮𝗿𝗲 𝘆𝗼𝘂 𝘁𝗼𝗱𝗮𝘆-?😵"
         },
         {
             role: "user",
-            content: `Hello, my name is ${nn}.`
+            content: `-𝗛𝗲𝗹𝗹𝗼, 𝗺𝘆 𝗻𝗮𝗺𝗲 𝗶𝘀_//-♦ ${nn}.`
         },
         {
             role: "assitant",
-            content: `Hello, ${nn}! How are you today?`
+            content: `-𝗛𝗲𝗹𝗹𝗼, ${nn}! 𝗛𝗼𝘄 𝗮𝗿𝗲 𝘆𝗼𝘂 𝘁𝗼𝗱𝗮𝘆-?`
         }
     ],
     prompt: `${np}`,
@@ -47,9 +47,9 @@ gpt({
   const answer = data.gpt
     var msg = [];
     {
-        msg += `🍒  𝗔𝗥𝗬𝗔𝗡 𝗔𝗜  🍒\n❍━━━━━━━━━━━━━❍\n ${answer}\n❍━━━━━━━━━━━━━❍`
+        msg += `  -𝗕Ø𝗦𝗦 𝗧𝗔𝗡𝗩𝗜𝗥-  \n❇━━━━━━♦━━━━━❇\n ${answer}\n❇━━━━━━♦━━━━━❇`
     }
-     NAYAN.react("✅")
+     NAYAN.react("🔰")
     return NAYAN.reply(msg)
   });
 
