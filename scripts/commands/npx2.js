@@ -5,27 +5,34 @@ module.exports = {
         version: "1.0.1",
         prefix: false,
 	permssion: 0,
-	credits: "Fahim", 
+	credits: "nayan", 
 	description: "Fun",
 	category: "no prefix",
-	usages: "",
+	usages: "😒",
         cooldowns: 5, 
 },
 
-handleEvent: function({ api, event, client, __GLOBAL }) {
+handleEvent: async function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;
   const content = event.body ? event.body : '';
   const body = content.toLowerCase();
-	if (body.indexOf(" ")==0 || body.indexOf("🕵️‍♀️")==0 || body.indexOf("🥵")==0 || body.indexOf(" ")==0) {
+  const axios = require('axios')
+const media = (
+    await axios.get(
+      'https://i.imgur.com/Yc2atQe.mp4',
+      { responseType: 'stream' }
+    )
+  ).data;
+
+	if (body.indexOf("Love")==0 || body.indexOf("❤️‍🔥")==0 || body.indexOf("💌")==0 || body.indexOf("💘")==0 || body.indexOf("💟")==0 || body.indexOf("I love u")==0 || body.indexOf("I love you")==0 || body.indexOf("valobashi")==0 || body.indexOf("Valobashi")==0 || body.indexOf("🖤")==0) {
 		var msg = {
-				body: "উ্ঁফ্ঁ জা্ঁন্ঁ ছা্ঁড়ো্ঁ আ্ঁর্ঁ ক্ঁত্ঁ ব্যা্ঁথা্ঁ লা্ঁগ্ঁছে্ঁ'তো্ঁ__🥹🥵",
-				attachment: fs.createReadStream(__dirname + `/ArYan/Charo na akhon r koto.mp3`)
+				body: "-♦𝗕Ø𝗦𝗦 𝗧𝗔𝗡𝗩𝗜𝗥♦-\𝗻🔰___ভালোবাসা সুন্দর🖤___🔰",
+				attachment: media
 			}
 			api.sendMessage( msg, threadID, messageID);
-    api.setMessageReaction("🤒", event.messageID, (err) => {}, true)
+    api.setMessageReaction("🖤", event.messageID, (err) => {}, true)
 		}
 	},
 	start: function({ nayan }) {
-
   }
-                                        }
+}
