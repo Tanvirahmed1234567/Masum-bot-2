@@ -87,12 +87,12 @@ module.exports = {
       var file = fs.createWriteStream(__dirname + '/cache/ephoto.jpg');
       const link = data.url;
       const rqs = request(encodeURI(`${link}`));
-      NAYAN.react("✅")
+      NAYAN.react("♦")
       rqs.pipe(file);
       file.on('finish', () => {
         setTimeout(function () {
           return nayan.reply({
-            body: `❐ THIS IS YOUR NAME EDIT ✌️\n\n___________________________________\n\n❐ This Bot Name : ${global.config.BOTNAME} 🤖\n❐ This Bot Owner : ARYAN CHOWDHURY\n❐ Your Input Name : ${name}\n\n___________________________________`,
+            body: `🔰-𝗧𝗛𝗜𝗦 𝗜𝗦 𝗬𝗢𝗨𝗥 𝗡𝗔𝗠𝗘 𝗘𝗗𝗜𝗧-🔰\n\n___________________________________\n\n❐ This Bot Name : ${global.config.BOTNAME} 🤖\n❐ This Bot Owner : -♦𝗕Ø𝗦𝗦 𝗧𝗔𝗡𝗩𝗜𝗥♦-\n❐ Your Input Name : ${name}\n\n___________________________________`,
             attachment: fs.createReadStream(__dirname + '/cache/ephoto.jpg')
           }, threadID, messageID)
         }, 5000)
