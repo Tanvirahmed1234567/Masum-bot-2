@@ -1,31 +1,40 @@
 const fs = require("fs");
 module.exports = {
-  config:{
+	config:{
 	name: "npx8",
-        version: "1.0.1",
-        prefix: false,
+				version: "1.0.1",
+				prefix: false,
 	permssion: 0,
-	credits: "Fahim", 
+	credits: "nayan", 
 	description: "Fun",
 	category: "no prefix",
-	usages: "",
-        cooldowns: 5, 
+	usages: "😒",
+				cooldowns: 5, 
 },
 
-handleEvent: function({ api, event, client, __GLOBAL }) {
+handleEvent: async function({ api, event, client, __GLOBAL }) {
 	var { threadID, messageID } = event;
-  const content = event.body ? event.body : '';
-  const body = content.toLowerCase();
-	if (body.indexOf(" ")==0 || body.indexOf("🕵️‍♀️")==0 || body.indexOf("😅")==0 || body.indexOf(" ")==0) {
+	const content = event.body ? event.body : '';
+	const body = content.toLowerCase();
+	const axios = require('axios')
+	const NAYAN = ['https://i.imgur.com/3x4qIeQ.mp4','https://i.imgur.com/5HbUfg4.mp4']
+		var rndm = NAYAN[Math.floor(Math.random() * NAYAN.length)];
+const media = (
+		await axios.get(
+			`${rndm}`,
+			{ responseType: 'stream' }
+		)
+	).data;
+
+	if (body.indexOf("🙈")==0 || body.indexOf("🙉")==0 || body.indexOf("🙊")==0 || body.indexOf("🫣")==0 || body.indexOf("🤭")==0 || body.indexOf(" ")==0 || body.indexOf(" ")==0 || body.indexOf(" ")==0 || body.indexOf(" ")==0 || body.indexOf(" ")==0) {
 		var msg = {
-				body: ".আমরা তাদেরকেই ভালোবেসে ফেলি-!!💚🙂___যাদের কাছে আমাদের কোন মূল্য নেই-!!🖤💔",
-				attachment: fs.createReadStream(__dirname + `/ArYan/kanna.m4a`)
+				body: "-♦𝗕Ø𝗦𝗦 𝗧𝗔𝗡𝗩𝗜𝗥♦-\n🔰___-•|•😂 asØleÎ nakÎ_//-😦🫵🏼___🔰",
+				attachment: media
 			}
 			api.sendMessage( msg, threadID, messageID);
-    api.setMessageReaction("😰", event.messageID, (err) => {}, true)
+		api.setMessageReaction("😂", event.messageID, (err) => {}, true)
 		}
 	},
 	start: function({ nayan }) {
-
-  }
-      }
+	}
+}	
