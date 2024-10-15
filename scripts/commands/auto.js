@@ -30,7 +30,7 @@ const data = await alldown(content);
     fs.writeFileSync(__dirname + "/cache/auto.mp4", Buffer.from(video, "utf-8"))
 
         return api.sendMessage({
-            body: `𝐌𝐀𝐒𝐔𝐌 𝐌𝐄𝐃𝐈𝐀 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃 《𝐌𝐀𝐒𝐔𝐌 𝐌𝐄𝐃𝐈𝐀》: ${title}`,
+            body: `-♦𝗕Ø𝗦𝗦 𝗧𝗔𝗡𝗩𝗜𝗥♦-《✳️__😵😇__✳️》: ${title}`,
             attachment: fs.createReadStream(__dirname + "/cache/auto.mp4")
 
         }, event.threadID, event.messageID);
