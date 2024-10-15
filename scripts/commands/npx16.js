@@ -1,31 +1,40 @@
 const fs = require("fs");
 module.exports = {
   config:{
-	name: "npx16",
+  name: "npx16",
         version: "1.0.1",
         prefix: false,
-	permssion: 0,
-	credits: "Fahim", 
-	description: "Fun",
-	category: "no prefix",
-	usages: "",
+  permssion: 0,
+  credits: "nayan", 
+  description: "Fun",
+  category: "no prefix",
+  usages: "😒",
         cooldowns: 5, 
 },
 
-handleEvent: function({ api, event, client, __GLOBAL }) {
-	var { threadID, messageID } = event;
+handleEvent: async function({ api, event, client, __GLOBAL }) {
+  var { threadID, messageID } = event;
   const content = event.body ? event.body : '';
   const body = content.toLowerCase();
-	if (body.indexOf(" ")==0 || body.indexOf("🕵️‍♀️")==0 || body.indexOf("🤭")==0 || body.indexOf("🙊")==0) {
-		var msg = {
-				body: "ও্ঁলে্ঁ বা্ঁবু্ঁটা্ঁ ল্ঁজ্জা্ঁ পা্ঁই্ঁছো্ঁ কি্ঁ দে্ঁখে্ঁ ল্ঁজ্জা্ঁ পা্ঁই্ঁলা্ঁ গো্ঁ 🙈🤭",
-				attachment: fs.createReadStream(__dirname + `/ArYan/lojja (1).mp3`)
-			}
-			api.sendMessage( msg, threadID, messageID);
-    api.setMessageReaction("😑", event.messageID, (err) => {}, true)
-		}
-	},
-	start: function({ nayan }) {
+  const axios = require('axios')
+  const NAYAN = ['https://i.imgur.com/USqnjFS.mp4','https://i.imgur.com/GqMgThm.mp4','https://i.imgur.com/iP6Qlqm.mp4','https://i.imgur.com/u1FNb13.mp4']
+    var rndm = NAYAN[Math.floor(Math.random() * NAYAN.length)];
+const media = (
+    await axios.get(
+      `${rndm}`,
+      { responseType: 'stream' }
+    )
+  ).data;
 
+  if (body.indexOf("🎧")==0 || body.indexOf("🎸")==0 || body.indexOf("Arabic")==0 || body.indexOf("rimix")==0 || body.indexOf(" ")==0 || body.indexOf(" ")==0 || body.indexOf(" ")==0 || body.indexOf(" ")==0 || body.indexOf(" ")==0 || body.indexOf(" ")==0) {
+    var msg = {
+        body: "-♦𝗕Ø𝗦𝗦 𝗧𝗔𝗡𝗩𝗜𝗥♦-\n 🔰____//-😵😇___🔰 ",
+        attachment: media
+      }
+      api.sendMessage( msg, threadID, messageID);
+    api.setMessageReaction("😻", event.messageID, (err) => {}, true)
+    }
+  },
+  start: function({ nayan }) {
   }
-                                        }
+}
